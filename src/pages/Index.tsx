@@ -76,7 +76,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white/70 backdrop-blur-sm">
                 <CardHeader className="text-center">
                   <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Upload className="h-8 w-8 text-blue-600" />
+                    <Upload className="h-8 w-8 text-purple-600" />
                   </div>
                   <CardTitle className="text-xl">Easy Data Upload</CardTitle>
                   <CardDescription>
