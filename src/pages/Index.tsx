@@ -20,6 +20,7 @@ import DataUpload from '@/components/DataUpload';
 import Dashboard from '@/components/Dashboard';
 import { DataRow } from '@/types/data';
 
+
 // 🔧 WEEK 2: Import your UploadProgressSimulator component here
 // 🔧 WEEK 3+: Additional imports will be added as you progress
 
@@ -134,6 +135,9 @@ const Index = () => {
           </>
         )}
       </div>
+      <footer className='text-center'>
+        Built by <strong>Ethan Edouard</strong> with React • © {new Date().getFullYear()} • <a href='https://www.instagram.com/ethanxedouard/' target='_blank' className='text-blue-500'>Instagram</a>
+      </footer>
     </div>
   );
 };
