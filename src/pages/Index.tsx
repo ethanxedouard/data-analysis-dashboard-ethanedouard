@@ -19,6 +19,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import DataUpload from '@/components/DataUpload';
 import Dashboard from '@/components/Dashboard';
 import { DataRow } from '@/types/data';
+import UploadProgressSimulator from '@/components/UploadProgressSimulator';
 
 
 // 🔧 WEEK 2: Import your UploadProgressSimulator component here
@@ -65,9 +66,9 @@ const Index = () => {
         {/* 🔧 WEEK 2: ADD YOUR PROGRESS COMPONENT HERE! */}
         {/* This is where students will add their UploadProgressSimulator component */}
         {/* Example: */}
-        {/* <div className="mb-8">
+        <div className="mb-8">
           <UploadProgressSimulator />
-        </div> */}
+        </div> 
 
         {data.length === 0 ? (
           <>

@@ -11,17 +11,34 @@ const UploadProgressSimulator = () => {
   const [progress, setProgress] = useState(0);        // Tracks progress percentage (0-100)
   const [isUploading, setIsUploading] = useState(false); // Tracks if upload is in progress
 
-  // 🔄 Event handler functions - what happens when buttons are clicked
+  // 🔄 Event h andler functions - what happens when buttons are clicked
   const startUpload = () => {
+    if (isUploading) return;
+    setIsUploading(true);
+    setProgress(0);
+
+    const interval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval);
+            setIsUploading(false);
+            return 100;
+          }
+          return prev + 5;
+        });
+    }, 300);
     // TODO: Implement upload simulation
     // HINT: You'll need to use setInterval to animate the progress
   };
 
   const resetProgress = () => {
+    setProgress(0);
+    setIsUploading(false);
     // TODO: Reset progress back to 0
   };
 
   const addProgress = () => {
+    setProgress((prev) => Math.min(prev + 25, 100))
     // TODO: Add 25% to current progress
   };
 
@@ -43,6 +60,10 @@ const UploadProgressSimulator = () => {
       <div className="text-center mb-6">
         <span className="text-3xl font-bold text-blue-600">{progress}%</span>
         <div className="text-sm text-gray-600 mt-2">
+          {isUploading && progress < 100 && "Uploading... please wait"}
+          {!isUploading && progress === 0 && "Ready to Start"}
+          {!isUploading && progress > 0 && "Pause"}
+          {progress === 100 && "Upload complete!"}
           {/* TODO: Add status messages based on progress and upload state */}
         </div>
       </div>
@@ -76,6 +97,12 @@ const UploadProgressSimulator = () => {
 
       {/* 🎉 Fun progress messages */}
       <div className="text-center mt-4 text-sm text-gray-600">
+        {progress === 0 && "💡 Tip: Click Start to begin uploading"}
+        {progress > 0 && progress < 25 && "🚀 Just getting started..."}
+        {progress >= 25 && progress < 50 && "⏳ Making progress..."}
+        {progress >= 50 && progress < 75 && "🌟 More than halfway there!"}
+        {progress >= 75 && progress < 100 && "🔥 Almost done..."}
+        {progress === 100 && "🎉 File uploaded successfully!"}
         {/* TODO: Add different messages based on progress value */}
         {/* HINT: Use conditional rendering like: */}
         {/* {progress === 0 && "Ready to start!"} */}
