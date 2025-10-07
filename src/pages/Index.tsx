@@ -20,6 +20,9 @@ import DataUpload from '@/components/DataUpload';
 import Dashboard from '@/components/Dashboard';
 import { DataRow } from '@/types/data';
 import UploadProgressSimulator from '@/components/UploadProgressSimulator';
+import Counter from '@/components/Counter';
+import NameInput from '@/components/NameInput';
+
 
 
 // 🔧 WEEK 2: Import your UploadProgressSimulator component here
@@ -69,6 +72,14 @@ const Index = () => {
         <div className="mb-8">
           <UploadProgressSimulator />
         </div> 
+        
+        <div className="mb-8">
+          <Counter />
+        </div>
+
+        <div className="mb-8">
+          <NameInput />
+        </div>
 
         {data.length === 0 ? (
           <>
